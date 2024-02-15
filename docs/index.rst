@@ -1,5 +1,5 @@
-Welcome to The roach case's documentation!
-======================================
+Welcome to the roach case's documentation!
+==========================================
 
 .. toctree::
    :maxdepth: 2
