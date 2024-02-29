@@ -2,6 +2,10 @@
 The roach case
 ==============
 
+.. image:: https://readthedocs.org/projects/roachcase/badge/?version=latest
+        :target: https://roachcase.readthedocs.io/en/latest/?version=latest
+        :alt: Documentation Status
+
 .. comment
   .. image:: https://img.shields.io/pypi/v/roachcase.svg
           :target: https://pypi.python.org/pypi/roachcase
@@ -9,9 +13,6 @@ The roach case
   .. image:: https://img.shields.io/travis/stefanoberri/roachcase.svg
           :target: https://travis-ci.com/stefanoberri/roachcase
 
-  .. image:: https://readthedocs.org/projects/roachcase/badge/?version=latest
-          :target: https://roachcase.readthedocs.io/en/latest/?version=latest
-          :alt: Documentation Status
 
 .. image:: docs/img/roachcase.png
   :width: 400
