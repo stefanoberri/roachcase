@@ -2,18 +2,21 @@
 The roach case
 ==============
 
+.. comment
+  .. image:: https://img.shields.io/pypi/v/roachcase.svg
+          :target: https://pypi.python.org/pypi/roachcase
 
-.. image:: https://img.shields.io/pypi/v/roachcase.svg
-        :target: https://pypi.python.org/pypi/roachcase
+  .. image:: https://img.shields.io/travis/stefanoberri/roachcase.svg
+          :target: https://travis-ci.com/stefanoberri/roachcase
 
-.. image:: https://img.shields.io/travis/stefanoberri/roachcase.svg
-        :target: https://travis-ci.com/stefanoberri/roachcase
+  .. image:: https://readthedocs.org/projects/roachcase/badge/?version=latest
+          :target: https://roachcase.readthedocs.io/en/latest/?version=latest
+          :alt: Documentation Status
 
-.. image:: https://readthedocs.org/projects/roachcase/badge/?version=latest
-        :target: https://roachcase.readthedocs.io/en/latest/?version=latest
-        :alt: Documentation Status
-
-
+.. image:: docs/img/roachcase.png
+  :width: 400
+  :alt: The roach case
+  :align: center
 
 
 Match making algorithm to create balanced teams.
