@@ -2,8 +2,8 @@
 The roach case
 ==============
 
-.. image:: https://readthedocs.org/projects/roachcase/badge/?version=latest
-        :target: https://roachcase.readthedocs.io/en/latest/?version=latest
+.. image:: https://readthedocs.org/projects/roachcase/badge
+        :target: https://roachcase.readthedocs.io/en/latest
         :alt: Documentation Status
 
 .. comment
