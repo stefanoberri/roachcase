@@ -2,17 +2,6 @@
 The roach case
 ==============
 
-.. comment
-  .. image:: https://img.shields.io/pypi/v/roachcase.svg
-          :target: https://pypi.python.org/pypi/roachcase
-
-  .. image:: https://img.shields.io/travis/stefanoberri/roachcase.svg
-          :target: https://travis-ci.com/stefanoberri/roachcase
-
-  .. image:: https://readthedocs.org/projects/roachcase/badge/?version=latest
-          :target: https://roachcase.readthedocs.io/en/latest/?version=latest
-          :alt: Documentation Status
-
 .. image:: img/roachcase.png
   :width: 400
   :alt: The roach case
@@ -22,16 +11,16 @@ The roach case
 A match making algorithm
 ------------------------
 
-The roach case is a match making algorithm to create balanced teams from players
-with different skills. It has two purposes:
+The *roach case* is a match making algorithm to create balanced teams from a set
+of players with different skills. It has two purposes:
 
-* Iteratively score player's skill level based on the outcome of played
+* Iteratively estimate player's skill level based on the outcome of played
   matches.
 
-* Use the player's latest scores to create balanced teams.
+* Use the player's latest estimated skill level to create balanced teams.
 
-Scores are converted into *roaches* each players has in the *roach case*. *Roaches*
-are traded after each match, depending on the outcome.
+Each player's skill level is measured in *roaches* stored in a *roach case*.
+After each match, *roaches* are traded, depending on the outcome.
 
 It is inspired by the `ELO scoring system`_ used in chess and other games.
 

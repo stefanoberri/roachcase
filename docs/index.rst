@@ -1,11 +1,9 @@
-Welcome to the roach case's documentation!
-==========================================
+.. include:: intro.rst
 
 .. toctree::
+   :hidden:
    :maxdepth: 2
-   :caption: Contents:
 
-   readme
    installation
    usage
    modules
