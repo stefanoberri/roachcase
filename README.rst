@@ -19,22 +19,39 @@ The roach case
   :align: center
 
 
-Match making algorithm to create balanced teams.
+A match making algorithm
+------------------------
+
+The roach case is a match making algorithm to create balanced teams from players
+with different skills. It has two purposes:
+
+* Iteratively score player's skill level based on the outcome of played
+  matches.
+
+* Use the player's latest scores to create balanced teams.
 
 
-* Free software: GNU General Public License v3
-* Documentation: https://roachcase.readthedocs.io.
+Scores are converted into *roaches* each players has in the *roach case*. *Roaches*
+are traded after each match, depending on the outcome.
 
+It is inspired by the `ELO scoring system`_ used in chess and other games.
 
-Features
---------
+A Python package
+----------------
 
-* TODO
+This Python package contains the *business logic* of the match making
+algorithm, together with a very simple *command line interface* and simple
+persistence layers. Other components can use it and extend it with a different
+interface (web, standalone, ...) and more scalable persistence (local or cloud
+database). Design is heavily inspired by `Clean Architecture`_ and/or `Onion
+Architecture`_.
+
 
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
+Stefano Berri
 
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+.. _Elo scoring system: https://en.wikipedia.org/wiki/Elo_rating_system
+.. _Clean Architecture: https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+.. _Onion Architecture: https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
