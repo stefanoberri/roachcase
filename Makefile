@@ -107,7 +107,7 @@ servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst' -c '$(MAKE) -C docs html' -R -D .
 
 release: dist ## package and upload a release
-	twine upload $(REPOARGS) --username $(PYPI_USER) --password $(PYPI_TOKEN) dist/*
+	twine upload --verbose $(REPOARGS) --username $(PYPI_USER) --password $(PYPI_TOKEN) dist/*
 
 versionfile:
 	@echo $(VERSION) > Versionfile
