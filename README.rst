@@ -6,10 +6,10 @@ The roach case
         :target: https://roachcase.readthedocs.io/en/latest
         :alt: Documentation Status
 
-.. comment
-  .. image:: https://img.shields.io/pypi/v/roachcase.svg
-          :target: https://pypi.python.org/pypi/roachcase
+.. image:: https://img.shields.io/pypi/v/roachcase.svg
+        :target: https://pypi.python.org/pypi/roachcase
 
+.. comment
   .. image:: https://img.shields.io/travis/stefanoberri/roachcase.svg
           :target: https://travis-ci.com/stefanoberri/roachcase
 
