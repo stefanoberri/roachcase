@@ -14,7 +14,7 @@ The roach case
           :target: https://travis-ci.com/stefanoberri/roachcase
 
 
-.. image:: docs/img/roachcase.png
+.. image:: https://roachcase.readthedocs.io/en/latest/_images/roachcase.png
   :width: 400
   :alt: The roach case
   :align: center
