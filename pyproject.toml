@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=61.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "roachcase"
+description = "A match making algorithm to create balanced teams from players with different skills."
+keywords = ["games", "ladder", "match making"]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Natural Language :: English",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Games/Entertainment",
+]
+
+dynamic = ["readme", "version"]
+requires-python = ">=3.8"
+dependencies = ["importlib-metadata"]
+authors = [
+  { name = "Stefano Berri", email = "s.berri@gmail.com" },
+]
+maintainers = [
+  { name = "Stefano Berri", email = "s.berri@gmail.com" },
+]
+
+[project.scripts]
+roachcase = "roachcase.cli:main"
+
+[project.urls]
+Documentation = "https://roachcase.readthedocs.org"
+Repository = "https://github.com/stefanoberri/roachcase"
+
+[tool.setuptools.packages.find]
+include = ["roachcase.*"]
+
+[tool.setuptools.dynamic]
+readme = { file = ["README.rst"], content-type = "text/x-rst" }
+version = { file = ["Versionfile"] }
+# license = { file = ["LICENSE"] }
+
+[tool.black]
+exclude = '''/( .history | .tox | .git | build | .mypy_cache)/'''
+
+[tool.isort]
+profile = "black"
