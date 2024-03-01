@@ -29,4 +29,4 @@ jobs:
         python -m pip install --upgrade pip
         pip install build twine
     - name: Publish package
-      run: make release IS_RELEASE=1 PYPI_TOKEN=${{ secrets.PYPI_API_TOKEN }}
+      run: make release IS_RELEASE=1 USE_TEST_PYPI=0 PYPI_TOKEN=${{ secrets.PYPI_API_TOKEN }}
