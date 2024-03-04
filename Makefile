@@ -84,7 +84,15 @@ lint/black: ## check style with black
 lint: lint/black ## check style
 
 test: ## run tests quickly with the default Python
-	pytest
+	pytest --verbose tests
+
+typecheck: ## run type checker
+	mypy roachcase \
+		--config-file mypy.ini \
+		--explicit-package-bases \
+		--strict
+	pytest --verbose --mypy-config-file=mypy.ini tests
+
 
 test-all: ## run tests on every Python version with tox
 	tox
@@ -95,7 +103,7 @@ coverage: ## check code coverage quickly with the default Python
 	coverage html
 	$(BROWSER) htmlcov/index.html
 
-docs: ## generate Sphinx HTML documentation, including API docs
+docs: versionfile ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/roachcase.rst
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ roachcase
@@ -111,16 +119,15 @@ release: dist ## package and upload a release
 
 versionfile:
 	@echo $(VERSION) > Versionfile
+	@echo '__version__ = "$(VERSION)"' > roachcase/_version.py
 
 dist: $(PACKAGE_FILE) ## builds source and wheel package
-	$(PYTHON) -m pip install --upgrade build
-	$(PYTHON) -m build
 
-install: clean ## install the package to the active Python's site-packages
+install: $(PACKAGE_FILE) ## install the package to the active Python's site-packages
 	$(PYTHON) -m pip install $(PACKAGE_FILE)
-	$(PYTHON) setup.py install
 
 $(PACKAGE_FILE): clean versionfile
 	$(PYTHON) -m pip install --upgrade build
 	$(PYTHON) -m build
+	@echo "package build in $@"
 	

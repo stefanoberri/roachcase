@@ -1,3 +1,4 @@
+
 ==============
 The roach case
 ==============
@@ -47,6 +48,10 @@ interface (web, standalone, ...) and more scalable persistence (local or cloud
 database). Design is heavily inspired by `Clean Architecture`_ and/or `Onion
 Architecture`_.
 
+Documentation
+-------------
+
+Please read the latest `documentation`_ online
 
 Credits
 -------
@@ -56,3 +61,4 @@ Stefano Berri
 .. _Elo scoring system: https://en.wikipedia.org/wiki/Elo_rating_system
 .. _Clean Architecture: https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 .. _Onion Architecture: https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/
+.. _documentation: https://roachcase.readthedocs.io/en/latest/
