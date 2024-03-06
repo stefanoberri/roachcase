@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>14</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>588</x>
+      <y>280</y>
+      <w>560</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>UseCaseFactory
+--
+PresenterFactory
+RepositoryFactory
+--
+build_manage_players(): ManagePlayersUseCase
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>574</x>
+      <y>140</y>
+      <w>252</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>/RepositoryFactory/
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>896</x>
+      <y>140</y>
+      <w>252</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>/PresenterFactory/
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>532</x>
+      <y>140</y>
+      <w>84</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;10.0;10.0;140.0;40.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1134</x>
+      <y>140</y>
+      <w>84</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;40.0;10.0;40.0;140.0;10.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>518</x>
+      <y>532</y>
+      <w>364</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>ManagePlayersUseCase
+--
+PlayerRepository
+--
+list_players(): List[Player]
+add_player(Player): None
+remove_player(Player): None</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1064</x>
+      <y>546</y>
+      <w>196</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Player
+--
+get_name(): str</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
