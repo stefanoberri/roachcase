@@ -25,7 +25,6 @@ wheels/
 .installed.cfg
 *.egg
 Versionfile
-roachcase/_version.py
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
