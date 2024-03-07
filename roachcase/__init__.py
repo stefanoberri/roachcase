@@ -5,7 +5,6 @@ The API is a "controller" for the business logic
 
 import functools
 from typing import List
-from roachcase._version import __version__
 from roachcase._usecases import factories
 
 
