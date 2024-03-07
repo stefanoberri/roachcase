@@ -63,6 +63,7 @@ clean-build: ## remove build artifacts
 	rm -fr build/
 	rm -fr dist/
 	rm -fr .eggs/
+	rm roachcase/_version.py Versionfile
 	find . -name '*.egg-info' -exec rm -fr {} +
 	find . -name '*.egg' -exec rm -f {} +
 
@@ -103,7 +104,7 @@ coverage: ## check code coverage quickly with the default Python
 	coverage html
 	$(BROWSER) htmlcov/index.html
 
-docs_templates: versionfile
+docs_templates:
 	rm -f docs/roachcase.rst
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ roachcase
