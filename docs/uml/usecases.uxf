@@ -7,13 +7,17 @@
       <x>588</x>
       <y>280</y>
       <w>560</w>
-      <h>140</h>
+      <h>238</h>
     </coordinates>
     <panel_attributes>UseCaseFactory
 --
 PresenterFactory
 RepositoryFactory
 --
+get_repo_factory(): RepositoryFactory
+set_repo_factory(
+  repository_factory: RepositoryFactory
+): None
 build_manage_players(): ManagePlayersUseCase
 </panel_attributes>
     <additional_attributes/>
@@ -67,8 +71,8 @@ build_manage_players(): ManagePlayersUseCase
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>518</x>
-      <y>532</y>
+      <x>434</x>
+      <y>630</y>
       <w>364</w>
       <h>140</h>
     </coordinates>
@@ -84,8 +88,8 @@ remove_player(Player): None</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1064</x>
-      <y>546</y>
+      <x>1022</x>
+      <y>644</y>
       <w>196</w>
       <h>70</h>
     </coordinates>

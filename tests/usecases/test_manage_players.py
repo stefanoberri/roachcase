@@ -1,10 +1,12 @@
 import pytest
 from roachcase._usecases import factories
+from roachcase import _repositories
 
 
 @pytest.fixture
 def usecase_factory():
-    result = factories.UseCaseFactory()
+    repo_factory = _repositories.InMemoryRepositoryFactory()
+    result = factories.UseCaseFactory(repo_factory)
     return result
 
 

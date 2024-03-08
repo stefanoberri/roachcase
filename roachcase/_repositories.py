@@ -1,4 +1,5 @@
 import abc
+import functools
 from typing import Iterable, List
 from roachcase import _entities
 
@@ -17,6 +18,12 @@ class PlayerRepository(abc.ABC):
         """Get players from the repository"""
 
 
+class RepositoryFactory(abc.ABC):
+    @abc.abstractmethod
+    def build_player_repo(self) -> PlayerRepository:
+        """Build a PlayerRepository"""
+
+
 class InMemoryPlayerRepository(PlayerRepository):
     def __init__(self) -> None:
         self.__store: List[_entities.Player] = []
@@ -29,3 +36,11 @@ class InMemoryPlayerRepository(PlayerRepository):
 
     def get(self) -> Iterable[_entities.Player]:
         return iter(self.__store)
+
+
+class InMemoryRepositoryFactory(RepositoryFactory):
+    @functools.lru_cache()
+    def build_player_repo(self) -> InMemoryPlayerRepository:
+        """Build an InMemoryPlayerRepository"""
+        result = InMemoryPlayerRepository()
+        return result

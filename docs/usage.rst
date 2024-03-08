@@ -2,14 +2,20 @@
 Tutorial
 ========
 
-The `roachcase` is a place where players keep their `roaches` and exchange them
+The `roach case` is a `case` where players keep their valuable `roaches` and exchange them
 when playing a match, depending on the outcome.
 
-To start, we need to register players to the `roachcase`::
+Here an example on how to use the Python API. Import the package::
 
     import roachcase
 
-    # currently there is no persistance, data is stored in memory
+By default there is no persistance, data is stored in memory, but you can
+specify persistance to store data across sessions. Currently only file
+persistance is supported::
+
+    roachcase.set_persistence("shelf", path="/path/to/a/file")
+
+Regardless of persistence, we can now register players to the `roach case`::
 
     roachcase.add_player("Alice")
     roachcase.add_player("Bob")
