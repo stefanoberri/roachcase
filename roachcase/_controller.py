@@ -12,6 +12,8 @@ from roachcase._infrastructure import shelf_repositories
 def list_players() -> List[str]:
     """List all players registered to the roachcase"""
     factory = get_use_case_factory()
+    repo_factory = factory.get_repo_factory()
+    repo = repo_factory.build_player_repo()
     use_case = factory.build_manage_players()
     result = list(use_case.list_players())
     return result

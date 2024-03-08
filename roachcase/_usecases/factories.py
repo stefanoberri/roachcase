@@ -1,4 +1,3 @@
-import functools
 from roachcase import _repositories
 from roachcase._usecases import manage_players
 
@@ -17,7 +16,6 @@ class UseCaseFactory:
     ) -> None:
         self.__repo_factory = repository_factory
 
-    @functools.lru_cache()
     def build_manage_players(self) -> manage_players.ManagePlayerUseCase:
         player_repository = self.__repo_factory.build_player_repo()
         result = manage_players.ManagePlayerUseCase(player_repository)

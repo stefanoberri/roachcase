@@ -9,9 +9,6 @@ class TestUseCaseFactory:
         factory = factories.UseCaseFactory(repository_factory)
         observed = factory.build_manage_players()
         assert isinstance(observed, manage_players.ManagePlayerUseCase)
-        # the factory is a singleton
-        reobserved = factory.build_manage_players()
-        assert observed == reobserved
 
     def test_set_get_repo_factory(self):
         repository_factory = _repositories.InMemoryRepositoryFactory()
