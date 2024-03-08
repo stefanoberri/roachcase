@@ -40,7 +40,7 @@ Documentation = "https://roachcase.readthedocs.org"
 Repository = "https://github.com/stefanoberri/roachcase"
 
 [tool.setuptools.packages.find]
-include = ["roachcase.*"]
+include = ["*"]
 
 [tool.setuptools.dynamic]
 readme = { file = ["README.rst"], content-type = "text/x-rst" }
