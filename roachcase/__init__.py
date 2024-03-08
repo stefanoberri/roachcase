@@ -1,29 +1,32 @@
-"""The API for the module. Only these functions/classes are exposed.
+"""The API for roachcase"""
 
-The API is a "controller" for the business logic
-"""
-
-import functools
-from typing import List
-from roachcase._usecases import factories
+from typing import List, Union, Optional
+import pathlib
+from roachcase import _controller
 
 
 def list_players() -> List[str]:
     """List all players registered to the roachcase"""
-    factory = _get_use_case_factory()
-    use_case = factory.build_manage_players()
-    result = list(use_case.list_players())
-    return result
+    return _controller.list_players()
 
 
 def add_player(player: str) -> None:
     """Register a player to the roachcase"""
-    factory = _get_use_case_factory()
-    use_case = factory.build_manage_players()
-    use_case.add_player(player)
+    _controller.add_player(player)
 
 
-@functools.lru_cache()
-def _get_use_case_factory() -> factories.UseCaseFactory:
-    result = factories.UseCaseFactory()
-    return result
+def set_persistence(
+    persistence: str = "memory", path: Optional[Union[str, pathlib.Path]] = None
+) -> None:
+    """Set/Reset where data should persist.
+
+    :param [persistence]: how to store the data. Available options are:
+        "memory", "shelf".
+    :param [path]: Optional path to the file for persistence. Will be created
+        if does not exist
+
+    With persistence = "memory", data will be lost at the end of a session.
+    With persistence = "shelf", path must be set, and data will be persisted as
+    a shelf/pickle database
+    """
+    _controller.set_persistence(persistence, path)

@@ -85,14 +85,14 @@ lint/black: ## check style with black
 lint: lint/black ## check style
 
 test: ## run tests quickly with the default Python
-	pytest --verbose tests
+	$(PYTHON) -m pytest --verbose tests
 
 typecheck: ## run type checker
 	mypy roachcase \
 		--config-file mypy.ini \
 		--explicit-package-bases \
 		--strict
-	pytest --verbose --mypy-config-file=mypy.ini tests
+	$(PYTHON) -m pytest --verbose --mypy-config-file=mypy.ini tests
 
 
 test-all: ## run tests on every Python version with tox
@@ -108,8 +108,9 @@ docs_templates:
 	rm -f docs/roachcase.rst
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ roachcase
-	sed -i '/release = /c\release = "$(BASEVERSION)"' docs/conf.py
-	sed -i 's/^roachcase/API/g' docs/modules.rst
+	sed -i.bak 's/^release = .*/release = "$(BASEVERSION)"/' docs/conf.py
+	sed -i.bak 's/^roachcase/API/g' docs/modules.rst
+	rm docs/conf.py.bak docs/modules.rst.bak
 
 docs: docs_templates ## generate Sphinx HTML documentation, including API docs
 	$(MAKE) -C docs clean
@@ -135,4 +136,4 @@ $(PACKAGE_FILE): clean versionfile
 	$(PYTHON) -m pip install --upgrade build
 	$(PYTHON) -m build
 	@echo "package build in $@"
-	
+

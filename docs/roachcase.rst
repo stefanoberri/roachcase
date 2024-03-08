@@ -1,17 +1,6 @@
 roachcase package
 =================
 
-Submodules
-----------
-
-roachcase.cli module
---------------------
-
-.. automodule:: roachcase.cli
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 Module contents
 ---------------
 
