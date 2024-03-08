@@ -1,7 +1,4 @@
-"""The API for the module. Only these functions/classes are exposed.
-
-The API is a "controller" for the business logic
-"""
+"""The API for roachcase"""
 
 from typing import List, Union, Optional
 import pathlib
@@ -32,4 +29,4 @@ def set_persistence(
     With persistence = "shelf", path must be set, and data will be persisted as
     a shelf/pickle database
     """
-    pass
+    _controller.set_persistence(persistence, path)

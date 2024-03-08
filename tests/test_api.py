@@ -2,6 +2,7 @@ import roachcase
 
 
 def test_add_list_players():
+    roachcase.set_persistence("memory")
     observed = roachcase.list_players()
     assert observed == []
     roachcase.add_player("Bob")

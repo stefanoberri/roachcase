@@ -6,6 +6,7 @@ import pathlib
 
 from roachcase._usecases import factories
 from roachcase import _repositories
+from roachcase._infrastructure import shelf_repositories
 
 
 def list_players() -> List[str]:
@@ -39,14 +40,17 @@ def set_persistence(
             persisted as a shelf/pickle database
     """
     factory = get_use_case_factory()
+    repo_factory: _repositories.RepositoryFactory
     if persistence == "memory":
         repo_factory = _repositories.InMemoryRepositoryFactory()
-        factory.set_repo_factory(repo_factory)
     elif persistence == "shelf":
-        repo_factory = _repositories.InMemoryRepositoryFactory()
-        factory.set_repo_factory(repo_factory)
+        if path is None:
+            raise ValueError("For persistence on `shelf`, `path` must be set")
+        else:
+            repo_factory = shelf_repositories.ShelfRepositoryFactory(pathlib.Path(path))
     else:
         raise ValueError
+    factory.set_repo_factory(repo_factory)
 
 
 def get_default_use_case_factory() -> factories.UseCaseFactory:
