@@ -63,7 +63,7 @@ clean-build: ## remove build artifacts
 	rm -fr build/
 	rm -fr dist/
 	rm -fr .eggs/
-	rm roachcase/_version.py Versionfile
+	rm -fr roachcase/_version.py Versionfile
 	find . -name '*.egg-info' -exec rm -fr {} +
 	find . -name '*.egg' -exec rm -f {} +
 
