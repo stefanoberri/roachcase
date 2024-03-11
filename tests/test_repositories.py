@@ -7,6 +7,10 @@ from roachcase import _entities, _repositories
 
 class TestInMemoryPlayerRepository:
     def test_round_trip(self, john, repo):
+        # if no players are added, return empty list
+        observed = repo.get()
+        assert list(observed) == []
+
         repo.add(john)
         observed = repo.get()
         expected = [john]
