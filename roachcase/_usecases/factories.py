@@ -1,5 +1,5 @@
 from roachcase import _repositories
-from roachcase._usecases import manage_players
+from roachcase._usecases import manage_players, manage_games
 
 
 class UseCaseFactory:
@@ -19,4 +19,9 @@ class UseCaseFactory:
     def build_manage_players(self) -> manage_players.ManagePlayerUseCase:
         player_repository = self.__repo_factory.build_player_repo()
         result = manage_players.ManagePlayerUseCase(player_repository)
+        return result
+
+    def build_manage_games(self) -> manage_games.ManageGameUseCase:
+        game_repository = self.__repo_factory.build_game_repo()
+        result = manage_games.ManageGameUseCase(game_repository)
         return result

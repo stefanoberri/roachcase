@@ -13,6 +13,27 @@ def john():
 
 
 @pytest.fixture
-def in_memory_repository():
-    result = _repositories.InMemoryPlayerRepository()
+def jane():
+    """A player"""
+    result = _entities.Player("Jane")
+    return result
+
+
+@pytest.fixture
+def football():
+    """A game"""
+    result = _entities.Game(name="Football")
+    return result
+
+
+@pytest.fixture
+def volleyball():
+    """A game"""
+    result = _entities.Game(name="Volleyball")
+    return result
+
+
+@pytest.fixture
+def in_memory_repository_factory():
+    result = _repositories.InMemoryRepositoryFactory()
     return result

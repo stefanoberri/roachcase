@@ -1,5 +1,5 @@
 from roachcase._usecases import factories
-from roachcase._usecases import manage_players
+from roachcase._usecases import manage_players, manage_games
 from roachcase import _repositories
 
 
@@ -9,6 +9,12 @@ class TestUseCaseFactory:
         factory = factories.UseCaseFactory(repository_factory)
         observed = factory.build_manage_players()
         assert isinstance(observed, manage_players.ManagePlayerUseCase)
+
+    def test_build_manage_games(self):
+        repository_factory = _repositories.InMemoryRepositoryFactory()
+        factory = factories.UseCaseFactory(repository_factory)
+        observed = factory.build_manage_games()
+        assert isinstance(observed, manage_games.ManageGameUseCase)
 
     def test_set_get_repo_factory(self):
         repository_factory = _repositories.InMemoryRepositoryFactory()
