@@ -39,4 +39,5 @@ jobs:
       run: |
         make test
     - name: Run typing annotation tests
+      run: |
         make typecheck
