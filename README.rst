@@ -10,9 +10,8 @@ The roach case
 .. image:: https://img.shields.io/pypi/v/roachcase.svg
         :target: https://pypi.python.org/pypi/roachcase
 
-.. comment
-  .. image:: https://img.shields.io/travis/stefanoberri/roachcase.svg
-          :target: https://travis-ci.com/stefanoberri/roachcase
+.. image:: https://github.com/stefanoberri/roachcase/actions/workflows/test-package.yml/badge.svg
+        :target: https://github.com/stefanoberri/roachcase/actions/workflows/test-package.yml
 
 
 .. image:: https://roachcase.readthedocs.io/en/latest/_images/roachcase.png
