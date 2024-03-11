@@ -16,8 +16,8 @@ class ShelfPlayerRepository(_repositories.PlayerRepository):
                 db["players"] = []
 
             current_players = db["players"]
-            current_players_names = [item.get_name() for item in current_players]
-            if player.get_name() in current_players_names:
+            player_names = [item.get_name() for item in current_players]
+            if player.get_name() in player_names:
                 raise _repositories.PlayerAlreadyExistError()
             current_players.append(player)
             db["players"] = [player]
@@ -25,7 +25,10 @@ class ShelfPlayerRepository(_repositories.PlayerRepository):
     def get(self) -> Iterable[_entities.Player]:
         """Get players from the repository"""
         with shelve.open(self.__db_file) as db:
-            result: Iterable[_entities.Player] = db["players"]
+            if "players" not in db:
+                result = []
+            else:
+                result = db["players"]
         return result
 
 
