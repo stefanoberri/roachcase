@@ -15,7 +15,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/stefanoberri/roachcase/issues.
+If you find a bug, please `file an issue`_
 
 If you are reporting a bug, please include:
 
@@ -26,7 +26,9 @@ If you are reporting a bug, please include:
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/stefanoberri/roachcase/issues.
+The best way to send feedback is to `file an issue`_
+
+.. _file an issue: https://github.com/stefanoberri/roachcase/issues
 
 If you are proposing a feature:
 
@@ -38,11 +40,11 @@ If you are proposing a feature:
 Add external functionality
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This codebase is written to be modular and trying to adhere to the (open-closed
-principle)[https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle], so it
-should be possible to extend its behaviour (e.g. adding a different persistence
-layer) without heavily modifying this codebase.
+This codebase is written to be modular and trying to adhere to the `open-closed
+principle`_, so it should be possible to extend its behaviour (e.g. adding a
+different persistence layer) without heavily modifying this codebase.
 
+.. _open-closed principle: https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle
 
 Development
 -----------
@@ -54,14 +56,13 @@ Ready to contribute? Here's how to set up `roachcase` for local development.
 
     $ git clone git@github.com:your_name_here/roachcase.git
 
-* You can optionally set up a [virtual
-  environment](https://docs.python-guide.org/dev/virtualenvs/#virtualenvwrapper)
-  first, then install development prerequisites::
+* You can optionally set up a `virtual environment`_ first, then install
+  development prerequisites::
 
     $ python -m pip install -r requirements_dev.txt
 
 * You can now run tests locally. Before you make any change you should make
-sure these commands complete successfully::
+  sure these commands complete successfully::
 
     $ make test
     $ make typecheck
@@ -73,17 +74,20 @@ sure these commands complete successfully::
     $ git checkout -b name-of-your-bugfix-or-feature
 
 * Now you can make your changes locally. As you make changes and before
-committing, please re-run the commands above to show that all tests are still
-passing.
+  committing, please re-run the commands above to show that all tests are still
+  passing.
 
-* Commit your changes and push your branch to GitHub. Please write a [useful
-commit message](https://cbea.ms/git-commit/)::
+* Commit your changes and push your branch to GitHub. Please write a `useful
+  commit message`_::
 
     $ git add -u
     $ git commit
     $ git push origin name-of-your-bugfix-or-feature
 
 * Submit a pull request through the GitHub website.
+
+.. _virtual environment: https://docs.python-guide.org/dev/virtualenvs/#virtualenvwrapper
+.. _useful commit message: https://cbea.ms/git-commit/
 
 Tips
 ----
