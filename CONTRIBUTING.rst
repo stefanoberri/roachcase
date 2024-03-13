@@ -23,25 +23,6 @@ If you are reporting a bug, please include:
 * Any details about your local setup that might be helpful in troubleshooting.
 * Detailed steps to reproduce the bug.
 
-Fix Bugs
-~~~~~~~~
-
-Look through the GitHub issues for bugs. Anything tagged with "bug" and "help
-wanted" is open to whoever wants to implement it.
-
-Implement Features
-~~~~~~~~~~~~~~~~~~
-
-Look through the GitHub issues for features. Anything tagged with "enhancement"
-and "help wanted" is open to whoever wants to implement it.
-
-Write Documentation
-~~~~~~~~~~~~~~~~~~~
-
-The roach case could always use more documentation, whether as part of the
-official The roach case docs, in docstrings, or even on the web in blog posts,
-articles, and such.
-
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
@@ -54,58 +35,59 @@ If you are proposing a feature:
 * Remember that this is a volunteer-driven project, and that contributions
   are welcome :)
 
-Get Started!
-------------
+Add external functionality
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This codebase is written to be modular and trying to adhere to the (open-closed
+principle)[https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle], so it
+should be possible to extend its behaviour (e.g. adding a different persistence
+layer) without heavily modifying this codebase.
+
+
+Development
+-----------
 
 Ready to contribute? Here's how to set up `roachcase` for local development.
 
-1. Fork the `roachcase` repo on GitHub.
-2. Clone your fork locally::
+* Fork the `roachcase` repo on GitHub.
+* Clone your fork locally::
 
     $ git clone git@github.com:your_name_here/roachcase.git
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
+* You can optionally set up a [virtual
+  environment](https://docs.python-guide.org/dev/virtualenvs/#virtualenvwrapper)
+  first, then install development prerequisites::
 
-    $ mkvirtualenv roachcase
-    $ cd roachcase/
-    $ python setup.py develop
+    $ python -m pip install -r requirements_dev.txt
 
-4. Create a branch for local development::
+* You can now run tests locally. Before you make any change you should make
+sure these commands complete successfully::
+
+    $ make test
+    $ make typecheck
+    $ make lint
+    $ make docs_templates
+
+* Create a branch for local development::
 
     $ git checkout -b name-of-your-bugfix-or-feature
 
-   Now you can make your changes locally.
+* Now you can make your changes locally. As you make changes and before
+committing, please re-run the commands above to show that all tests are still
+passing.
 
-5. When you're done making changes, check that your changes pass flake8 and the
-   tests, including testing other Python versions with tox::
+* Commit your changes and push your branch to GitHub. Please write a [useful
+commit message](https://cbea.ms/git-commit/)::
 
-    $ flake8 roachcase tests
-    $ python setup.py test or pytest
-    $ tox
-
-   To get flake8 and tox, just pip install them into your virtualenv.
-
-6. Commit your changes and push your branch to GitHub::
-
-    $ git add .
-    $ git commit -m "Your detailed description of your changes."
+    $ git add -u
+    $ git commit
     $ git push origin name-of-your-bugfix-or-feature
 
-7. Submit a pull request through the GitHub website.
-
-Pull Request Guidelines
------------------------
-
-Before you submit a pull request, check that it meets these guidelines:
-
-1. The pull request should include tests.
-2. If the pull request adds functionality, the docs should be updated. Put
-   your new functionality into a function with a docstring, and add the
-   feature to the list in README.rst.
+* Submit a pull request through the GitHub website.
 
 Tips
 ----
 
-To run a subset of tests::
+To run a subset of tests, with verbose output and exit at first failure::
 
-$ pytest -v tests.test_roachcase
+$ python3 -m pytest -vvvv -x tests/test_entities.py
