@@ -84,8 +84,11 @@ lint/black: ## check style with black
 
 lint: lint/black ## check style
 
-test: ## run tests quickly with the default Python
-	$(PYTHON) -m pytest --verbose tests
+test: ## run unit tests that do not use remote db
+	$(PYTHON) -m pytest --verbose tests -m 'not livedb'
+
+dbtest: ## run unit tests that use remote db
+	$(PYTHON) -m pytest --verbose tests -m 'livedb'
 
 typecheck: ## run type checker
 	mypy roachcase \
