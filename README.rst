@@ -41,10 +41,10 @@ A Python package
 ----------------
 
 This Python package contains the *business logic* of the match making
-algorithm, together with a very simple *command line interface* and simple
-persistence layers. Other components can use it and extend it with a different
-interface (web, standalone, ...) and more scalable persistence (local or cloud
-database). Design is heavily inspired by `Clean Architecture`_ and/or `Onion
+algorithm, available through its API. It also has a simple persistence layers.
+Other components can use it and extend it with a different interface (web,
+standalone, ...) and more scalable persistence (local or cloud database).
+Design is heavily inspired by `Clean Architecture`_ and/or `Onion
 Architecture`_.
 
 Documentation
