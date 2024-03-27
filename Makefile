@@ -95,7 +95,6 @@ typecheck: ## run type checker
 		--config-file mypy.ini \
 		--explicit-package-bases \
 		--strict
-	$(PYTHON) -m pytest --verbose --mypy-config-file=mypy.ini tests
 
 
 test-all: ## run tests on every Python version with tox
